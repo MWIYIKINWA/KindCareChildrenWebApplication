@@ -10,7 +10,7 @@
 	<style type="text/css">
 		header
 		{
-            background: #c3c3c3;
+            background: #670e10;
             padding: 30px;
             display: flex;
             justify-content: space-between;
@@ -31,22 +31,22 @@
 		}
 
 		footer{
-			background: #c3c3c3;
+			background: #670e10;
             padding: 20px;
 		}
 
 	</style>
 
 </head>
-<body style="background-color:#d2d2d2;">
+<body style="background-color:#1e1e1e;">
 
 	<header>
 		
-            <h5 class="fw-bold fs-2">Teacher Portal</h5>
+            <h5 class="fw-bold fs-2 text-light">Teacher Portal</h5>
             <nav>
             	<ul>
-            		<li style=" list-style: none;"><a href="{{ route('login') }}" class="nav-link fs-4 text-dark">Login</a></li>
-            		<li style=" list-style: none; "><a href="{{ route('register') }}" class="nav-link fs-4 text-dark">Register</a></li>
+            		<li style=" list-style: none;"><a href="{{ route('login') }}" class="nav-link fs-4 text-light">Login</a></li>
+            		<li style=" list-style: none; "><a href="{{ route('register') }}" class="nav-link fs-4 text-light">Register</a></li>
             	</ul>
             </nav>
 
@@ -55,7 +55,7 @@
 
 	<div class="container">
 		<div class="row">
-			<h4 class="display-6 fw-bold  text-center my-4">KinderCare Character Draw System</h4>
+			<h4 class="display-6 fw-bold  text-center my-4 text-light">KinderCare Character Draw System</h4>
 		</div>
 		<div class="row">
 			<img src="{{asset('photos/tt.jpg')}}" class="img-fluid img text-center">
@@ -64,7 +64,7 @@
 
 
 	<footer class="mt-4">
-		<h4 class="fs-5 text-center">Copyright@Group-21,  2022</h4>
+		<h4 class="fs-5 text-center text-light">Copyright@Group-21,  2022</h4>
 	</footer>
 
 </body>
