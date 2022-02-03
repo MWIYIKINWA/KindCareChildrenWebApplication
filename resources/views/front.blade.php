@@ -38,9 +38,9 @@
 	</style>
 
 </head>
-<body style="background-color:#1e1e1e;">
+<body>
 
-	<header>
+	<header class="bg-primary">
 		
             <h5 class="fw-bold fs-2 text-light">Teacher Portal</h5>
             <nav>
@@ -55,7 +55,7 @@
 
 	<div class="container">
 		<div class="row">
-			<h4 class="display-6 fw-bold  text-center my-4 text-light">KinderCare Character Draw System</h4>
+			<h4 class="display-6 fw-bold  text-center my-4 text-primary">KinderCare Character Draw System</h4>
 		</div>
 		<div class="row">
 			<img src="{{asset('photos/tt.jpg')}}" class="img-fluid img text-center">
@@ -63,7 +63,7 @@
 	</div>
 
 
-	<footer class="mt-4">
+	<footer class="mt-4 bg-primary">
 		<h4 class="fs-5 text-center text-light">Copyright@Group-21,  2022</h4>
 	</footer>
 

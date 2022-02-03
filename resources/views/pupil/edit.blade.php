@@ -14,11 +14,29 @@
 <div class="container">
 
 	<div class="row my-4">
-		<h4 class="text-center fw-bold">Pupil Registration</h4>
+		<h4 class="text-center fw-bold">Edit Pupil</h4>
 	</div>
 
 	<div class="row mr-auto ml-auto mt-3">
-		<form method="POST" action="">
+
+		@if ($errors->any())
+
+		<div class="alert alert-danger">
+			<strong>Fill the fields correctly please</strong>
+			<ul>
+				@foreach ($errors->all() as $error)
+				  <li>{{ $error }}</li>
+				  @endforeach
+			</ul>
+			
+		</div>
+
+		@endif
+
+		<form method="POST" action="{{ route('pupil.update', $pupil->id) }}">
+
+			@csrf
+			@method('PUT')
 			
               <div class="form-group">
               	  <label class="form-label">First Name</label>
@@ -40,7 +58,7 @@
               	  <input type="text" name="code" class="form-control">
               </div>
 
-              <button class="btn btn-secondary mt-3" type="submit" name="register">Register</button>
+              <button class="btn btn-secondary mt-3" type="submit" name="register">Update</button>
 
 
 		</form>

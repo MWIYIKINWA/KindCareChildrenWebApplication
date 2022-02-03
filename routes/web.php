@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PupilsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,24 @@ Route::get('/', function () {
     return view('front');
 });
 
+Route::resource('pupil', 'App\Http\Controllers\PupilsController');
+
 Route::get('/regForm', function(){
-    return view('regForm');
+    return view('pupil.regForm');
 });
+
+Route::get('/list', function(){
+    return view('pupil.list');
+});
+
+Route::get('/edit', function(){
+    return view('pupil.edit');
+});
+
+Route::get('/set', function(){
+    return view('assignment.set');
+});
+
 
 Auth::routes();
 

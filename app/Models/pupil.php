@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class pupil extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+      'firstName','lastName','phone','code'
+    ];
 }

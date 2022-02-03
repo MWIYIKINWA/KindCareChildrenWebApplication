@@ -12,9 +12,11 @@ class PupilsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function regForm()
     {
-        //
+        $pupil = pupil::latest()->paginate(5);
+        return view('pupil.regForm', compact('pupil'))
+          ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +26,7 @@ class PupilsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pupil.regForm');
     }
 
     /**
@@ -35,7 +37,19 @@ class PupilsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+              
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'phone' => 'required',
+            'code' => 'required',
+              
+        ]);
+
+        pupil::create($request->all());
+
+        return redirect()->route('pupil.regForm')
+            ->with('success', 'Pupil created successfully');
     }
 
     /**
@@ -46,7 +60,7 @@ class PupilsController extends Controller
      */
     public function show(pupil $pupil)
     {
-        //
+        return view('pupil.list',compact('pupil'));
     }
 
     /**
@@ -57,7 +71,7 @@ class PupilsController extends Controller
      */
     public function edit(pupil $pupil)
     {
-        //
+        return view('pupil.edit',compact('pupil'));
     }
 
     /**
@@ -69,7 +83,18 @@ class PupilsController extends Controller
      */
     public function update(Request $request, pupil $pupil)
     {
-        //
+        $request->validate([
+            
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'phone' => 'required',
+            'code' => 'required'
+
+        ]);
+        $pupil->update($request->all());
+
+        return redirect()->route('pupil.regForm')
+            ->with('success', 'Pupil updated successfully');
     }
 
     /**
@@ -80,6 +105,9 @@ class PupilsController extends Controller
      */
     public function destroy(pupil $pupil)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('pupil.regForm')
+            ->with('success', 'Pupil deleted successfully');
     }
 }
